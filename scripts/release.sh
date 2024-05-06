@@ -24,7 +24,7 @@ fi
 echo '' > CHANGELOG.md
 
 # Update the changelog
-gitchangelog
+gitchangelog > CHANGELOG.md
 git add CHANGELOG.md
 git commit -m "Update CHANGELOG.md"
 
@@ -45,3 +45,6 @@ git commit -m "Bump version: $current_version -> $new_version"
 git tag -a "v$new_version" -m "Release $new_version"
 
 git push --follow-tags
+
+poetry build
+poetry publish
