@@ -6,5 +6,15 @@ interface_logger = setup_logging()
 
 
 def command_line_interface() -> None:
-    """Command line interface for the application."""
+    """
+    Controls the command line.
+    
+    Notes
+    -----
+    Asks for their name and then greets the user.
+    """
     interface_logger.info("Command line interface started.")
+    
+    name = input("What is your name?")
+    
+    print(f"Hello, {name}!")
